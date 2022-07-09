@@ -3,14 +3,14 @@ console.log(response);
 const myKey = "e6bf3729b8121cbb851956e56285ec51";
 const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=d767ae434eaf5dc9bdfbf679add804dd'
 
-window.onload = function() {
-    document.cookie.split(';').some((item) => {
-        if (item.trim().startsWith("weather=")) {
-            var lastSearch = item.trim().split('=')[1];
-            weather.getCoords(lastSearch);
-        }
-    });
-};
+// window.onload = function() {
+//     document.cookie.split(';').some((item) => {
+//         if (item.trim().startsWith("weather=")) {
+//             var lastSearch = item.trim().split('=')[1];
+//             weather.getCoords(lastSearch);
+//         }
+//     });
+// };
 
 // function to convert kelvins to fahrenheit
 function kToF(getTemp) 
@@ -46,7 +46,7 @@ document.querySelector("#search-button").addEventListener("click", function () {
 function search() {
     const city =  document.querySelector("#search").value 
     // store search cookie
-    document.cookie = "weather="+document.querySelector("#search").value;
+    // document.cookie = "weather="+document.querySelector("#search").value;
 
     fetch ("http://api.openweathermap.org/geo/1.0/direct?q=" 
         + city + "&limit=5&appid=" + myKey)
